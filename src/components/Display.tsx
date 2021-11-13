@@ -10,18 +10,21 @@ const Display = (props: any) => {
                 }
 
                 return(
-                    <div style={{border: '1px solid black', padding:'50px'}} key={index}>
-                        <img style={{width: 'auto', height: 'auto'}} src={image} alt={article.headline.main} />
+                    <div style={{border: '1px solid #ccc', padding:'10px', marginBottom: '20px', backgroundColor: '#ddd'}} key={index}>
                         <h2><a href={article.web_url}>{article.headline.main}</a></h2>
-
-                        {article.keywords.length > 0 && article.keywords.map((keyword: any, index: number) => {
+                        <img style={{maxWidth: '200px', float: 'right', marginLeft: '20px'}} src={image} alt={article.headline.main} />
+                        {article.snippet}
+                        <div className='keywords'>
+                            <p>Keywords:</p>
+                            {article.keywords.length > 0 && article.keywords.map((keyword: any, index: number) => {
                             return(
                                 <div key={index}>
-                                    <p style={{border: '1px solid gray', width: '100px', display: 'block'}}>{keyword.value}</p>
+                                    <p style={{margin: '5px', backgroundColor: '#ccc'}}>{keyword.value}</p>
                                 </div>
                             )
-                        })}
-                    </div>
+                            })}
+                        </div>
+                 </div>
                 )
             })}
         </div>

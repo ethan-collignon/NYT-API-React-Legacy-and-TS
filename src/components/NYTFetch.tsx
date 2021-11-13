@@ -5,7 +5,7 @@ type Articles = {
     result: any, //might need to change back to any
     searchItem: string,
     startDate: string,
-    endDate: number | string,
+    endDate: string,
     pageNumber: number
 }
 
@@ -41,7 +41,8 @@ export default class NYT extends Component<{}, Articles> {
         .then(data => {
             this.setState({
                 result: data.response.docs
-            });
+            });console.log(data.response);
+            
         })
     }
     handleSubmit(e: any) {
@@ -70,30 +71,29 @@ export default class NYT extends Component<{}, Articles> {
 
     render(){
         return(
-            <div>
-                <div className="inputs">
+            <div className="wrapper">
+                <div className="controls">
                     <form onSubmit={(e) => this.handleSubmit(e)}>
-                    
-                    <p>
+                        <p>
                             <label >Enter a SINGLE search term (required): </label>
                             <input type="text" id="search"  required onChange={(e) => this.setState({searchItem: e.target.value})}/> 
                         </p>
-                        <p>
+                         <p>
                             <label>Enter a start date (format YYYYMMDD): </label>
                             <input type="date" id="start-date" pattern="[0-9]{8}" onChange={(e) => this.setState({startDate: e.target.value})} />
                         </p>
-                        <p>
+                         <p>
                             <label >Enter an end date (format YYYYMMDD) :</label>
                             <input type="date" id="end-date" pattern="[0-9]{8}" onChange={(e) => this.setState({endDate: e.target.value})}/>
                         </p>
-                        <p>
+                         <p>
                             <button>Submit search</button>
                         </p>
                     </form>
                 </div>
                 <div className='results'>
-                    <button onClick={(e) => this.previousPage(e)}>Previous</button>
-                    <button onClick={(e) => this.nextPage(e)}>Next</button>
+                    <button style={{float: 'left', marginBottom: '20px'}} onClick={(e) => this.previousPage(e)}>Previous 10</button>
+                    <button style={{float: 'right'}} onClick={(e) => this.nextPage(e)}>Next 10</button>
                     <Display result={this.state.result}/>
                 </div>
             </div>

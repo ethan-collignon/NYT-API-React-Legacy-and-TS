@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+.controls, .results {
+  flex: 1;
+  padding: 10px;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+
+article {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+}
+
+body{
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.span {
+  background-color: #ccc;
+  padding: 5px;
+  margin: 5px
+}
+
+.keywords {
+  padding-top: 15px;
+}
