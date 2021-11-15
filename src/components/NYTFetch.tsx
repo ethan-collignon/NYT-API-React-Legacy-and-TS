@@ -76,7 +76,7 @@ export default class NYT extends Component<{}, Articles> {
                     <form onSubmit={(e) => this.handleSubmit(e)}>
                         <p>
                             <label >Enter a SINGLE search term (required): </label>
-                            <input type="text" id="search"  required onChange={(e) => this.setState({searchItem: e.target.value})}/> 
+                            <input type="text" id="search" required onChange={(e) => this.setState({searchItem: e.target.value})}/> 
                         </p>
                          <p>
                             <label>Enter a start date (format YYYYMMDD): </label>
