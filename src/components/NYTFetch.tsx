@@ -94,6 +94,9 @@ export default class NYT extends Component<{}, Articles> {
                 <div className='results'>
                     <button style={{float: 'left', marginBottom: '20px'}} onClick={(e) => this.previousPage(e)}>Previous 10</button>
                     <button style={{float: 'right'}} onClick={(e) => this.nextPage(e)}>Next 10</button>
+                    <br/>
+                    <br/>
+                    <br/>
                     <Display result={this.state.result}/>
                 </div>
             </div>
