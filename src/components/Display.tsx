@@ -4,11 +4,10 @@ const Display = (props: any) => {
     return(
         <div>
             {props.result.length > 0 && props.result.map((article: any, index: number) => {
-                let image 
-                {if(article.multimedia.length > 0)
+                let image: any
+                if(article.multimedia.length > 0)
                     {image=`http://www.nytimes.com/${article.multimedia[0].url}`}
-                }
-
+                
                 return(
                     <div style={{border: '1px solid #ccc', padding:'10px', marginBottom: '20px', backgroundColor: '#ddd'}} key={index}>
                         <h2><a href={article.web_url}>{article.headline.main}</a></h2>
